@@ -52,7 +52,13 @@ export default function Contact() {
                         action="destroy"
                         onSubmit={(event) => {
 
-                            event.preventDefault();
+                            if (
+                                !confirm(
+                                    "Please confirm you want to delete this record."
+                                )
+                            ) {
+                                event.preventDefault();
+                            }
 
                         }}
                     >
